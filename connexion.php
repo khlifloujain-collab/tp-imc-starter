@@ -10,9 +10,10 @@ $password = ''; // Vide par défaut sur XAMPP
  
 try {
     // TODO 1 : Instancier l'objet $pdo avec le DSN mysql, charset=utf8mb4
-    
+    $pdo = new PDO("mysql:host=localhost;dbname=imc_db;charset=utf8mb4", "root", "");
     // TODO 2 : Configurer le mode d'erreur sur PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION
-    
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
 } catch (PDOException $e) {
     die("Erreur de connexion : " . $e->getMessage());
 }
