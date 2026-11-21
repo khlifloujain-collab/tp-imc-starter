@@ -35,11 +35,10 @@ $mesures = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <!-- TODO 3 (Ex 7) : Ajouter action="ajouter.php" et method="POST" sur le formulaire -->
             <form class="imc" action="ajouter.php" method="POST">
                 <label>
-                    Personne
-                    <select name="personne_id" required>
-                        <option value="">-- Choisir --</option>
-                        <!-- TODO 4 (Ex 7 & 8) : Boucler sur $personnes pour générer les <option> (n'oubliez pas htmlspecialchars) -->
-                      <?php foreach ($personnes as $p): ?>
+    Personne
+    <select name="personne_id" required>
+        <option value="">-- Choisir --</option>
+        <?php foreach ($personnes as $p): ?>
             <option value="<?= (int) $p['id'] ?>">
                 <?= htmlspecialchars($p['prenom'] . ' ' . $p['nom']) ?>
             </option>
