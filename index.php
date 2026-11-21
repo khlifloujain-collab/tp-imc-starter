@@ -39,15 +39,18 @@ $mesures = $stmt->fetchAll(PDO::FETCH_ASSOC);
                     <select name="personne_id" required>
                         <option value="">-- Choisir --</option>
                         <!-- TODO 4 (Ex 7 & 8) : Boucler sur $personnes pour générer les <option> (n'oubliez pas htmlspecialchars) -->
-                      <select name="personne_id" required>
-     <option value="">-- Choisir --</option>
-     <?php foreach ($personnes as $p): ?>
-         <option value="<?= (int) $p['id'] ?>">
-             <?= htmlspecialchars($p['prenom'] . ' ' . $p['nom']) ?>
-         </option>
-     <?php endforeach; ?>
-                    </select>
-                </label>
+                      <label>
+    Personne
+    <select name="personne_id" required>
+        <option value="">-- Choisir --</option>
+        <!-- TODO 4 -->
+        <?php foreach ($personnes as $p): ?>
+            <option value="<?= (int) $p['id'] ?>">
+                <?= htmlspecialchars($p['prenom'] . ' ' . $p['nom']) ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
+</label>
  
                 <label>
                     Poids (kg)
